@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentSlide < totalSlides) {
       goToSlide(currentSlide + 1);
     } else {
-      // Gentle pulse on last slide
+      // Gentle 3D tactile pulse on last slide
       const activeSlide = document.querySelector('.slide.active');
       if (activeSlide) {
         activeSlide.animate([
-          { transform: 'scale(1)' },
-          { transform: 'scale(0.99)' },
-          { transform: 'scale(1)' }
-        ], { duration: 180 });
+          { transform: 'translate3d(0, 0, 0) scale(1)' },
+          { transform: 'translate3d(0, 0, -25px) scale(0.985)' },
+          { transform: 'translate3d(0, 0, 0) scale(1)' }
+        ], { duration: 220, easing: 'cubic-bezier(0.2, 0.9, 0.3, 1)' });
       }
     }
   };

@@ -304,7 +304,7 @@ html, body {
 }
 
 /* ==========================================================================
-   FIXED PRESENTATION STAGE (NO SCROLLERS - PURE FIXED VIEWPORT)
+   FIXED PRESENTATION STAGE WITH 3D PERSPECTIVE
    ========================================================================== */
 .presentation-stage {
   flex: 1;
@@ -314,6 +314,8 @@ html, body {
   padding: 0.8rem 1.4rem;
   overflow: hidden;
   height: calc(100vh - 128px);
+  perspective: 1600px;
+  perspective-origin: 50% 50%;
 }
 
 .slide-frame {
@@ -330,6 +332,9 @@ html, body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
 }
 
 @media (max-width: 860px) {
@@ -340,40 +345,242 @@ html, body {
   }
 }
 
-/* Fixed Slide Content (No internal scroll unless on tiny screens) */
-/* Slide Stage Container */
+/* 3D MULTI-STYLE TRANSITIONS FOR EACH SLIDE (DISTINCT PER SLIDE) */
+/* Universal Slide 3D Canvas Base */
 .slide {
   position: absolute;
   inset: 0;
   padding: 2rem 2.8rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(30px);
-  transition: opacity var(--transition-slide), transform var(--transition-slide), visibility var(--transition-slide);
+  transform: translate3d(80px, 0, -130px) rotateY(15deg) scale(0.94);
+  transform-origin: 50% 50%;
+  transition:
+    transform 0.54s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.54s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.15rem;
-  overflow: hidden; /* Keep stage fixed 16:9; scrolling happens inside .slide-main-body */
+  overflow: hidden; /* Stage fixed 16:9; scrolling inside .slide-main-body */
   background-color: var(--neo-white);
+  pointer-events: none;
 }
 
 @media (max-height: 600px), (max-width: 768px) {
   .slide {
     padding: 1.2rem 1.4rem;
-    overflow-y: auto; /* Fallback for very small mobile screens */
+    overflow-y: auto;
   }
 }
 
+/* Universal Active State (Returns to flat 100% crisp focal plane) */
 .slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  transform-origin: 50% 50% !important;
   z-index: 10;
+  pointer-events: auto;
+  transition:
+    transform 0.54s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.54s;
 }
 
-.slide.prev {
-  transform: translateX(-30px);
+/* --------------------------------------------------------------------------
+   STYLE 1: HERO ENTRANCE (Slide 1 - Grand Dimensional Perspective)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-hero {
+  transform: translate3d(0, 30px, -230px) scale(0.85) rotateX(9deg);
+}
+.slide.anim-3d-hero.prev {
+  transform: translate3d(-90px, 0, -140px) rotateY(-18deg) scale(0.92);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 2: 3D FLOAT & ELEVATE (Slide 2, 11, 18, 26, 37, 45)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-float {
+  transform: translate3d(0, 85px, -135px) rotateX(-15deg) scale(0.93);
+}
+.slide.anim-3d-float.prev {
+  transform: translate3d(0, -85px, -135px) rotateX(15deg) scale(0.93);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 3: 3D TUNNEL ZOOM (Slide 3, 13, 25, 31, 43)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-zoom {
+  transform: translate3d(0, 0, -260px) scale(0.79) rotateZ(3.5deg);
+}
+.slide.anim-3d-zoom.prev {
+  transform: translate3d(0, 0, -260px) scale(0.79) rotateZ(-3.5deg);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 4: 3D ISOMETRIC SHIFT (Slide 4, 14, 23, 29, 35, 40)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-isometric {
+  transform: translate3d(85px, 45px, -150px) rotateX(12deg) rotateY(-16deg) scale(0.92);
+}
+.slide.anim-3d-isometric.prev {
+  transform: translate3d(-85px, -45px, -150px) rotateX(-12deg) rotateY(16deg) scale(0.92);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 5: 3D PORTFOLIO HINGE (Slide 5, 12, 17, 24, 30, 36, 42)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-hinge {
+  transform-origin: 0% 50%;
+  transform: translate3d(50px, 0, -130px) rotateY(-24deg) scale(0.95);
+}
+.slide.anim-3d-hinge.prev {
+  transform-origin: 100% 50%;
+  transform: translate3d(-50px, 0, -130px) rotateY(24deg) scale(0.95);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 6: 3D HORIZONTAL CARD FLIP (Slide 6, 10, 20, 27, 33, 41)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-flip-y {
+  transform: translate3d(85px, 0, -140px) rotateY(18deg) scale(0.93);
+}
+.slide.anim-3d-flip-y.prev {
+  transform: translate3d(-85px, 0, -140px) rotateY(-18deg) scale(0.93);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 7: 3D ROLODEX VERTICAL FLIP (Slide 7, 16, 22, 28, 34, 44)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-flip-x {
+  transform: translate3d(0, 80px, -140px) rotateX(-18deg) scale(0.93);
+}
+.slide.anim-3d-flip-x.prev {
+  transform: translate3d(0, -80px, -140px) rotateX(18deg) scale(0.93);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 8: 3D VORTEX TWIST (Slide 8, 15, 21, 32, 39, 46)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-twist {
+  transform: translate3d(70px, -28px, -140px) rotateY(15deg) rotateZ(-6deg) scale(0.93);
+}
+.slide.anim-3d-twist.prev {
+  transform: translate3d(-70px, 28px, -140px) rotateY(-15deg) rotateZ(6deg) scale(0.93);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 9: 3D CORNER UNFOLD (Slide 9, 19, 38, 47)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-unfold {
+  transform: translate3d(65px, -45px, -135px) rotateX(-14deg) rotateY(15deg) scale(0.92);
+}
+.slide.anim-3d-unfold.prev {
+  transform: translate3d(-65px, 45px, -135px) rotateX(14deg) rotateY(-15deg) scale(0.92);
+}
+
+/* --------------------------------------------------------------------------
+   STYLE 10: 3D GRAND FINALE (Slide 48 - Expansive Settle)
+   -------------------------------------------------------------------------- */
+.slide.anim-3d-finale {
+  transform: translate3d(0, 0, -290px) scale(0.78) rotateX(10deg);
+}
+.slide.anim-3d-finale.prev {
+  transform: translate3d(0, 0, -290px) scale(0.78) rotateX(-10deg);
+}
+
+/* --------------------------------------------------------------------------
+   PHYSICAL 3D DEPTH LIGHTING & SHADING OVERLAYS
+   -------------------------------------------------------------------------- */
+.slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.01) 50%, transparent 100%);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+  z-index: 40;
+}
+
+.slide.anim-3d-flip-x::after,
+.slide.anim-3d-float::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.01) 50%, transparent 100%);
+}
+
+.slide.anim-3d-zoom::after,
+.slide.anim-3d-finale::after,
+.slide.anim-3d-hero::after {
+  background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.12) 100%);
+}
+
+.slide.anim-3d-hinge.prev::after {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) 0%, transparent 60%);
+}
+
+.slide.prev::after {
+  opacity: 1;
+}
+
+.slide.active::after {
+  opacity: 0;
+}
+
+/* --------------------------------------------------------------------------
+   MICRO-DEPTH 3D INTERNAL CONTENT SETTLING
+   -------------------------------------------------------------------------- */
+@keyframes slide3DDepthHeader {
+  0% {
+    opacity: 0.65;
+    transform: translate3d(0, 8px, -18px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide3DDepthBody {
+  0% {
+    opacity: 0.65;
+    transform: translate3d(0, 12px, -24px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slide.active .slide-header-box {
+  animation: slide3DDepthHeader 0.48s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.slide.active .slide-main-body,
+.slide.active .title-slide-layout,
+.slide.active .closing-hero-card {
+  animation: slide3DDepthBody 0.54s cubic-bezier(0.2, 0.9, 0.3, 1) 0.04s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .slide.active, .slide.prev {
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .slide::after {
+    display: none !important;
+  }
+  .slide.active .slide-header-box,
+  .slide.active .slide-main-body,
+  .slide.active .title-slide-layout,
+  .slide.active .closing-hero-card {
+    animation: none !important;
+  }
 }
 
 .slide-content {

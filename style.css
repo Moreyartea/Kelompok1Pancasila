@@ -1,0 +1,1482 @@
+/* ==========================================================================
+   ORIGINAL NEUBRUTALISM SLIDE PRESENTATION (FIXED VIEWPORT EDITION)
+   Mata Kuliah: Pendidikan Kewarganegaraan (Kelompok 1)
+   Aesthetic: True Neubrutalism (Pure Black Borders, Saturated Pop Colors, Card Ornaments)
+   ========================================================================== */
+
+:root {
+  /* True Neubrutalism Core Palette */
+  --neo-black: #000000;
+  --neo-white: #ffffff;
+  --neo-canvas: #fffef8;
+  
+  /* Saturated Authentic Neubrutal Colors */
+  --neo-yellow: #FFE600;
+  --neo-cyan: #00E5FF;
+  --neo-pink: #FF6B97;
+  --neo-green: #00E676;
+  --neo-orange: #FF7700;
+  --neo-purple: #9D4EDD;
+
+  /* Card Tint Surfaces */
+  --card-yellow-bg: #FFFBE6;
+  --card-cyan-bg: #E6FCFF;
+  --card-pink-bg: #FFEBF1;
+  --card-green-bg: #E6FDEE;
+  --card-orange-bg: #FFF0E6;
+
+  /* Structural Dimensions */
+  --neo-border-thick: 2.8px;
+  --neo-border-med: 2.2px;
+  --neo-border-thin: 1.8px;
+  
+  --neo-radius-sm: 6px;
+  --neo-radius-md: 12px;
+  --neo-radius-lg: 16px;
+  --neo-radius-pill: 999px;
+  
+  --neo-shadow-sm: 3px 3px 0px var(--neo-black);
+  --neo-shadow-md: 5px 5px 0px var(--neo-black);
+  --neo-shadow-lg: 8px 8px 0px var(--neo-black);
+  --neo-shadow-hover: 1.5px 1.5px 0px var(--neo-black);
+
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Transitions */
+  --transition-fast: 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slide: 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent global body scroll */
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--neo-black);
+  background-color: var(--neo-canvas);
+  /* Crisp dotted matrix background */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.4px, transparent 1.4px);
+  background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screen reader utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Card Tint Classes */
+.card-yellow { background-color: var(--card-yellow-bg); border-top: 5px solid var(--neo-yellow) !important; }
+.card-cyan { background-color: var(--card-cyan-bg); border-top: 5px solid var(--neo-cyan) !important; }
+.card-pink { background-color: var(--card-pink-bg); border-top: 5px solid var(--neo-pink) !important; }
+.card-green { background-color: var(--card-green-bg); border-top: 5px solid var(--neo-green) !important; }
+.card-orange { background-color: var(--card-orange-bg); border-top: 5px solid var(--neo-orange) !important; }
+
+.yellow-box { background-color: var(--neo-yellow); }
+.cyan-box { background-color: var(--neo-cyan); }
+.pink-box { background-color: var(--neo-pink); }
+.green-box { background-color: var(--neo-green); }
+.orange-box { background-color: var(--neo-orange); color: #ffffff; }
+
+/* ==========================================================================
+   TOP PROGRESS BAR
+   ========================================================================== */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-bottom: 2px solid var(--neo-black);
+}
+
+.progress-bar {
+  height: 100%;
+  width: 1.78%;
+  background-color: var(--neo-green);
+  transition: width var(--transition-slide);
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.deck-header {
+  height: 64px;
+  padding: 0 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--neo-border-thick);
+  background-color: var(--neo-white);
+  position: relative;
+  z-index: 100;
+  gap: 1rem;
+}
+
+.brand-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 14px;
+  background-color: var(--neo-yellow);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  box-shadow: var(--neo-shadow-sm);
+  flex-shrink: 0;
+}
+
+.brand-tag .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  border: 1.8px solid var(--neo-black);
+}
+
+.deck-title-mini {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--neo-black);
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 860px) {
+  .deck-title-mini {
+    display: block;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Neubrutal Select Dropdown */
+.slide-select-wrap {
+  position: relative;
+}
+
+.neu-select {
+  padding: 7px 12px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--neo-black);
+  background-color: var(--neo-white);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  cursor: pointer;
+  outline: none;
+  max-width: 240px;
+  text-overflow: ellipsis;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@media (max-width: 600px) {
+  .neu-select {
+    max-width: 140px;
+  }
+}
+
+.neu-select:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: var(--neo-shadow-md);
+  background-color: var(--neo-yellow);
+}
+
+/* Neubrutal Buttons */
+.neu-btn, .neu-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background-color: var(--neo-white);
+  color: var(--neo-black);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 900;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none;
+}
+
+.neu-btn-icon {
+  padding: 7px 12px;
+}
+
+.neu-btn-icon .btn-label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .neu-btn-icon .btn-label {
+    display: inline;
+  }
+}
+
+.neu-btn:hover, .neu-btn-icon:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-md);
+}
+
+.neu-btn:active, .neu-btn-icon:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--neo-black);
+}
+
+.neu-btn.primary {
+  background-color: var(--neo-yellow);
+}
+
+.neu-btn.primary:hover {
+  background-color: #ffd000;
+}
+
+.neu-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--neo-shadow-sm) !important;
+}
+
+/* Neubrutal Badges */
+.neu-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  box-shadow: 2px 2px 0px var(--neo-black);
+  background-color: var(--neo-white);
+}
+
+.neu-badge.yellow { background-color: var(--neo-yellow); }
+.neu-badge.cyan { background-color: var(--neo-cyan); }
+.neu-badge.green { background-color: var(--neo-green); }
+.neu-badge.pink { background-color: var(--neo-pink); color: #ffffff; }
+.neu-badge.orange { background-color: var(--neo-orange); color: #ffffff; }
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   FIXED PRESENTATION STAGE (NO SCROLLERS - PURE FIXED VIEWPORT)
+   ========================================================================== */
+.presentation-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  overflow: hidden;
+  height: calc(100vh - 128px);
+}
+
+.slide-frame {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  max-height: 740px;
+  aspect-ratio: 16 / 9;
+  background-color: var(--neo-white);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-lg);
+  box-shadow: var(--neo-shadow-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 860px) {
+  .slide-frame {
+    aspect-ratio: auto;
+    height: 100%;
+    max-height: none;
+  }
+}
+
+/* Fixed Slide Content (No internal scroll unless on tiny screens) */
+/* Slide Stage Container */
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 1.8rem 2.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30px);
+  transition: opacity var(--transition-slide), transform var(--transition-slide), visibility var(--transition-slide);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Naturally align from top, eliminating massive void */
+  gap: 1.1rem;
+  overflow: hidden; /* Keep stage fixed 16:9; scrolling happens inside .slide-main-body */
+  background-color: var(--neo-white);
+}
+
+@media (max-height: 600px), (max-width: 768px) {
+  .slide {
+    padding: 1.2rem 1.4rem;
+    overflow-y: auto; /* Fallback for very small mobile screens */
+  }
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+.slide.prev {
+  transform: translateX(-30px);
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.1rem;
+}
+
+/* Slide Header & Titles */
+.slide-header-box {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.slide-title {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--neo-black);
+}
+
+.slide-title em {
+  font-style: italic;
+  font-weight: 900;
+  color: var(--neo-black);
+}
+
+.slide-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #333333;
+}
+
+.slide-lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #222222;
+  margin-bottom: 1.4rem;
+  max-width: 580px;
+}
+
+/* ==========================================================================
+   CARD ORNAMENTS & DECORATIVE ELEMENTS (HIASAN NEUBRUTALISME)
+   ========================================================================== */
+/* Neubrutal Angled Masking Tape */
+.card-tape {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 65px;
+  height: 16px;
+  background: var(--neo-yellow);
+  border: 1.5px solid var(--neo-black);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Corner Sticker / Starburst */
+.card-corner-sticker {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--neo-black);
+  pointer-events: none;
+}
+
+/* Term Tag Pills */
+.term-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.85rem;
+  border: 1.8px solid var(--neo-black);
+  border-radius: var(--neo-radius-sm);
+  box-shadow: 2px 2px 0px var(--neo-black);
+}
+
+.term-tag.yellow { background-color: var(--neo-yellow); }
+.term-tag.cyan { background-color: var(--neo-cyan); }
+.term-tag.pink { background-color: var(--neo-pink); color: #fff; }
+.term-tag.green { background-color: var(--neo-green); }
+.term-tag.orange { background-color: var(--neo-orange); color: #fff; }
+
+/* ==========================================================================
+   SLIDE 01: COVER
+   ========================================================================== */
+.cover-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.2rem;
+  align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 940px) {
+  .cover-layout {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+.cover-title {
+  font-size: 2.3rem;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+}
+
+.highlight-text {
+  display: inline-block;
+  background-color: var(--neo-yellow);
+  padding: 3px 10px;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-sm);
+  box-shadow: 4px 4px 0px var(--neo-black);
+  margin-top: 4px;
+  font-size: 2.15rem;
+}
+
+.lecturer-card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background-color: var(--card-green-bg);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.lecturer-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--neo-radius-sm);
+  background-color: var(--neo-white);
+  border: var(--neo-border-thick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lecturer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #444;
+}
+
+.info-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--neo-black);
+}
+
+/* Team Panel */
+.team-card {
+  position: relative;
+  background-color: var(--neo-white);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-lg);
+  padding: 1.3rem;
+  box-shadow: var(--neo-shadow-md);
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px dashed var(--neo-black);
+}
+
+.team-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.member-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background-color: var(--neo-canvas);
+  border: 2px solid var(--neo-black);
+  border-radius: var(--neo-radius-sm);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.member-item:hover {
+  transform: translateX(4px);
+  background-color: var(--neo-yellow);
+}
+
+.member-num {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  background-color: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 4px;
+}
+
+.member-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.member-name {
+  font-weight: 800;
+  font-size: 0.96rem;
+}
+
+.member-nim {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--neo-black);
+  background: var(--neo-white);
+  padding: 2px 7px;
+  border: 1.5px solid var(--neo-black);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   GENERAL SLIDES BODY (NATURAL FLOW WITH INTERNAL SCROLLING)
+   ========================================================================== */
+.slide-main-body {
+  flex: 1;
+  min-height: 0; /* Crucial for internal scroll inside flex layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Naturally flows directly below title, eliminating empty void */
+  gap: 1rem;
+  overflow-y: auto; /* Internal scrolling whenever content exceeds 16:9 stage */
+  overflow-x: hidden;
+  padding-right: 8px; /* Room for scrollbar */
+}
+
+/* Neubrutal Custom Scrollbar for internal material scrolling */
+.slide-main-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.slide-main-body::-webkit-scrollbar-track {
+  background: var(--neo-canvas);
+  border: 1.5px solid var(--neo-black);
+  border-radius: 4px;
+}
+
+.slide-main-body::-webkit-scrollbar-thumb {
+  background-color: var(--neo-yellow);
+  border: 1.5px solid var(--neo-black);
+  border-radius: 4px;
+}
+
+.slide-main-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neo-orange);
+}
+
+.slide-main-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neo-yellow) var(--neo-canvas);
+}
+
+.slide-intro-box {
+  background-color: var(--card-yellow-bg);
+  border: var(--neo-border-thick);
+  border-left: 6px solid var(--neo-yellow);
+  border-radius: var(--neo-radius-md);
+  padding: 1.25rem 1.6rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  box-shadow: var(--neo-shadow-sm);
+  position: relative;
+  flex-shrink: 0; /* Does not unnaturally squash */
+}
+
+.slide-intro-box p + p {
+  margin-top: 0.75rem;
+}
+
+.slide-intro-box em {
+  font-style: italic;
+}
+
+.slide-intro-box strong {
+  font-weight: 800;
+}
+
+.cards-container {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.cards-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-grid-5 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 860px) {
+  .cards-grid-2, .cards-grid-3, .cards-grid-4, .cards-grid-5 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content-card {
+  position: relative;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1.15rem 1.35rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: var(--neo-white);
+}
+
+.content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neo-shadow-md);
+}
+
+.card-header-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 0.2rem;
+}
+
+.card-num-badge {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  background-color: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.card-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.card-subtitle em {
+  font-style: italic;
+  font-weight: 900;
+}
+
+.card-text {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--neo-black);
+}
+
+.card-text p + p {
+  margin-top: 0.55rem;
+}
+
+.card-text em {
+  font-style: italic;
+}
+
+.card-text strong {
+  font-weight: 800;
+}
+
+/* Bullet & Numbered Lists */
+.neu-bullet-list, .neu-numbered-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0.4rem 0;
+}
+
+.neu-bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.5;
+}
+
+.neu-bullet-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  font-size: 0.65rem;
+  top: 4px;
+  color: var(--neo-black);
+}
+
+.neu-numbered-list {
+  counter-reset: item;
+}
+
+.neu-numbered-list li {
+  position: relative;
+  padding-left: 22px;
+  counter-increment: item;
+  line-height: 1.5;
+}
+
+.neu-numbered-list li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+}
+
+/* Callout Box */
+.callout-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+.callout-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   TABLES (SLIDE 09 & 36)
+   ========================================================================== */
+.table-container {
+  width: 100%;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-md);
+  background-color: var(--neo-white);
+  overflow: hidden;
+  margin: 0.3rem 0;
+}
+
+.neu-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.neu-table th {
+  padding: 10px 14px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 900;
+  border-bottom: var(--neo-border-thick);
+  border-right: 2px solid var(--neo-black);
+  color: var(--neo-black);
+}
+
+.neu-table th:last-child {
+  border-right: none;
+}
+
+.neu-table td {
+  padding: 9px 14px;
+  border-bottom: 1.8px solid var(--neo-black);
+  border-right: 2px solid var(--neo-black);
+  line-height: 1.42;
+}
+
+.neu-table td:last-child {
+  border-right: none;
+}
+
+.neu-table tr:last-child td {
+  border-bottom: none;
+}
+
+.neu-table tbody tr:hover {
+  background-color: var(--card-yellow-bg);
+}
+
+/* ==========================================================================
+   VENN DIAGRAM (SLIDE 16)
+   ========================================================================== */
+.venn-interactive-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 1.6rem;
+  align-items: center;
+  flex: 1;
+}
+
+@media (max-width: 880px) {
+  .venn-interactive-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.venn-diagram-box {
+  background-color: var(--neo-white);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-lg);
+  padding: 0.8rem;
+  box-shadow: var(--neo-shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venn-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+.venn-circle {
+  stroke: var(--neo-black);
+  stroke-width: 3px;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+}
+
+.circle-knowledge { fill: var(--neo-cyan); }
+.circle-skills { fill: var(--neo-green); }
+.circle-disposition { fill: var(--neo-pink); }
+
+.venn-center-core {
+  fill: var(--neo-yellow);
+  stroke: var(--neo-black);
+  stroke-width: 3px;
+  stroke-dasharray: 4 2;
+}
+
+.venn-label {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 900;
+  fill: var(--neo-black);
+  text-anchor: middle;
+}
+
+.venn-center-text {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 900;
+  fill: #000000;
+  text-anchor: middle;
+}
+
+.triad-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.triad-detail-item {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 0.25rem;
+}
+
+.detail-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.triad-detail-item p {
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.formula-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 16px;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+.formula-chip {
+  padding: 3px 10px;
+  background-color: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  border-radius: var(--neo-radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   TEMPLE ARSITEKTUR 4 PILAR (SLIDE 18)
+   ========================================================================== */
+.temple-diagram-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.temple-roof {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1rem 1.8rem;
+  text-align: center;
+  box-shadow: var(--neo-shadow-md);
+  position: relative;
+}
+
+.roof-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 2px 10px;
+  background: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  border-radius: var(--neo-radius-pill);
+  margin-bottom: 0.25rem;
+}
+
+.roof-title {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.roof-desc {
+  font-size: 0.96rem;
+  color: #222;
+  max-width: 800px;
+  margin: 0.15rem auto 0;
+}
+
+.temple-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  flex: 1;
+}
+
+@media (max-width: 860px) {
+  .temple-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.temple-pillar {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1rem 1rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pillar-cap {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  background: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.pillar-shaft h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+}
+
+.pillar-shaft p {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.pillar-base {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  background: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.temple-foundation {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 0.8rem 1.4rem;
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 800;
+  box-shadow: var(--neo-shadow-sm);
+}
+
+/* ==========================================================================
+   CYCLE WORKFLOW (SLIDE 25)
+   ========================================================================== */
+.cycle-workflow-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+@media (max-width: 880px) {
+  .cycle-workflow-grid {
+    flex-direction: column;
+  }
+}
+
+.cycle-card {
+  flex: 1;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1.1rem 1.1rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cycle-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cycle-pill {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cycle-icon {
+  font-size: 1.6rem;
+}
+
+.cycle-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.cycle-subtitle {
+  font-size: 0.84rem;
+  color: #444;
+  font-weight: 800;
+}
+
+.cycle-desc {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.cycle-output-badge {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  background: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.cycle-connector {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--neo-black);
+}
+
+@media (max-width: 880px) {
+  .cycle-connector {
+    transform: rotate(90deg);
+  }
+}
+
+/* ==========================================================================
+   ROADMAP 8 NODES (SLIDE 27)
+   ========================================================================== */
+.roadmap-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .roadmap-grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.roadmap-node {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 0.9rem 0.9rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.node-year {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  background: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: var(--neo-radius-pill);
+  align-self: flex-start;
+}
+
+.roadmap-node h4 {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+.roadmap-node p {
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: #222;
+}
+
+.history-quote-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 18px;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  flex-shrink: 0;
+}
+
+.quote-symbol {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.quote-text {
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   QUADRANT MATRIX (SLIDE 50)
+   ========================================================================== */
+.matrix-quadrant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  flex: 1;
+}
+
+@media (max-width: 800px) {
+  .matrix-quadrant-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quadrant-card {
+  position: relative;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.quadrant-badge {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  background: var(--neo-white);
+  border: 1.8px solid var(--neo-black);
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.quadrant-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.quadrant-threat {
+  font-size: 0.94rem;
+  line-height: 1.42;
+}
+
+.quadrant-solution {
+  border: 1.8px solid var(--neo-black);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  background-color: var(--neo-white);
+}
+
+/* ==========================================================================
+   SLIDE 56: CLOSING
+   ========================================================================== */
+.closing-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.3rem 1.6rem;
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-lg);
+  box-shadow: var(--neo-shadow-md);
+}
+
+@media (max-width: 800px) {
+  .closing-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.closing-heading {
+  font-family: var(--font-heading);
+  font-size: 1.38rem;
+  font-weight: 900;
+  margin: 0.25rem 0;
+}
+
+.closing-sub {
+  font-size: 1rem;
+  font-style: italic;
+  color: #333;
+}
+
+/* ==========================================================================
+   FOOTER NAVIGATION (CLEAN & BALANCED)
+   ========================================================================== */
+.deck-footer {
+  height: 62px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--neo-border-thick);
+  background-color: var(--neo-white);
+  position: relative;
+  z-index: 100;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .deck-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    height: auto;
+  }
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slide-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background-color: var(--neo-yellow);
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.slide-divider {
+  color: var(--neo-black);
+}
+
+.keyboard-hint {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #444;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .keyboard-hint {
+    display: block;
+  }
+}
+
+.keyboard-hint kbd {
+  padding: 2px 7px;
+  border: 1.8px solid var(--neo-black);
+  border-radius: 4px;
+  background-color: var(--neo-white);
+  box-shadow: 1.5px 1.5px 0px var(--neo-black);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--neo-black);
+}
+
+/* Fullscreen Mode */
+:fullscreen .presentation-stage {
+  padding: 0;
+  height: 100vh;
+  background-color: var(--neo-canvas);
+}
+
+:fullscreen .slide-frame {
+  max-width: 100vw;
+  height: calc(100vh - 128px);
+  max-height: none;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}

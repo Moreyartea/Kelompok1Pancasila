@@ -86,8 +86,55 @@
         </select>
       </div>
 
+      <button class="neu-btn-icon header-nav-btn" id="btnSlideDrawer" title="Daftar Slide (M)" aria-label="Buka Daftar Slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="3" y1="9" x2="21" y2="9"></line>
+          <line x1="9" y1="21" x2="9" y2="9"></line>
+        </svg>
+        <span class="btn-label">Slides</span>
+      </button>
+
+      <button class="neu-btn-icon header-nav-btn" id="btnQuiz" title="Kuis Interaktif PKn (Q)" aria-label="Buka Kuis Interaktif">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+        </svg>
+        <span class="btn-label">Kuis</span>
+      </button>
+
+      <button class="neu-btn-icon header-nav-btn" id="btnGlossary" title="Kamus Istilah PKn (G)" aria-label="Buka Kamus Istilah">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span class="btn-label">Kamus</span>
+      </button>
+
+      <button class="neu-btn-icon header-nav-btn" id="btnNotes" title="Catatan Presenter (N)" aria-label="Buka Catatan Presenter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span class="btn-label">Catatan</span>
+      </button>
+
+      <button class="neu-btn-icon header-nav-btn" id="btnSoundToggle" title="Efek Suara (S)" aria-label="Toggle Sound Effects">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" id="soundIconOn">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" id="soundIconOff" style="display:none;">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+
       <button class="neu-btn-icon" id="btnFullscreen" title="Layar Penuh (F)" aria-label="Toggle fullscreen">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
         </svg>
         <span class="btn-label">Layar Penuh</span>
@@ -530,9 +577,54 @@
                 <h4 class="card-subtitle">Menjaga integritas dan kepedulian sosial</h4>
               </div>
               <div class="card-text"><p>Integritas tampak dalam kejujuran, konsistensi antara nilai dan tindakan, serta kesediaan bertanggung jawab atas keputusan. Kepedulian sosial mendorong tindakan yang membantu menyelesaikan persoalan bersama tanpa melanggar hak pihak lain.</p>
-<p><strong>Tugas:</strong> Susun kriteria <em>good citizen</em> dalam kelompok dan sampaikan hasil diskusi beserta contoh perilaku yang dapat diamati.</p></div>
+<p><strong>Tugas Kelompok:</strong> Susun kriteria <em>good citizen</em> dalam kelompok dan sampaikan hasil diskusi beserta contoh perilaku yang dapat diamati.</p></div>
             </div>
+          </div>
+
+          <!-- INTERACTIVE GOOD CITIZEN CHECKER WIDGET -->
+          <div class="citizen-checker-widget neu-card card-yellow" id="citizenChecker">
+            <div class="widget-header">
+              <div class="widget-title-wrap">
+                <span class="neu-badge cyan">⚡ Interaktif Mobile &amp; Kelas</span>
+                <h3 class="widget-title">Simulasi Karakter: Apakah Anda Sudah Menjadi <em>Good Citizen</em>?</h3>
+              </div>
+              <div class="widget-meter-badge" id="citizenMeterBadge">0 / 5 Terpenuhi</div>
             </div>
+            <p class="widget-desc">Ketuk / centang kriteria di bawah ini sesuai tindakan nyata Anda dalam kehidupan sehari-hari:</p>
+            <div class="citizen-checklist">
+              <label class="citizen-check-item">
+                <input type="checkbox" class="citizen-checkbox" data-score="20">
+                <span class="check-box-custom"></span>
+                <span class="check-label-text"><strong>1. Sadar Hak &amp; Kewajiban:</strong> Taat rambu lalu lintas, menghargai fasilitas umum, dan memprioritaskan kepentingan publik.</span>
+              </label>
+              <label class="citizen-check-item">
+                <input type="checkbox" class="citizen-checkbox" data-score="20">
+                <span class="check-box-custom"></span>
+                <span class="check-label-text"><strong>2. Taat Hukum &amp; Anti-Kekerasan:</strong> Menolak aksi perundungan (bullying), tawuran, dan menyelesaikan konflik lewat musyawarah damai.</span>
+              </label>
+              <label class="citizen-check-item">
+                <input type="checkbox" class="citizen-checkbox" data-score="20">
+                <span class="check-box-custom"></span>
+                <span class="check-label-text"><strong>3. Toleransi Kebinekaan:</strong> Menghormati perbedaan suku, agama, dan pandangan politik tanpa diskriminasi.</span>
+              </label>
+              <label class="citizen-check-item">
+                <input type="checkbox" class="citizen-checkbox" data-score="20">
+                <span class="check-box-custom"></span>
+                <span class="check-label-text"><strong>4. Kritis Digital:</strong> Tabayyun / cek fakta sebelum menyebarkan informasi, tidak memproduksi hoaks dan ujaran kebencian.</span>
+              </label>
+              <label class="citizen-check-item">
+                <input type="checkbox" class="citizen-checkbox" data-score="20">
+                <span class="check-box-custom"></span>
+                <span class="check-label-text"><strong>5. Integritas &amp; Peduli Sosial:</strong> Berperilaku jujur (anti-titip absen/plagiat) dan aktif dalam kegiatan sosial bermasyarakat.</span>
+              </label>
+            </div>
+            <div class="citizen-result-bar">
+              <div class="citizen-progress-track">
+                <div class="citizen-progress-fill" id="citizenProgressFill" style="width: 0%;"></div>
+              </div>
+              <div class="citizen-result-text" id="citizenResultText">Ketuk kriteria di atas untuk melihat profil kewarganegaraan Anda!</div>
+            </div>
+          </div>
         </div>
         <!-- Acuan: Acuan materi: Materi.pdf, hlm. 4–6. -->
       </section>
@@ -816,40 +908,50 @@
 
         <div class="slide-main-body">
           <div class="slide-intro-box"><p><!-- SLIDE 17 --></p></div>
-<div class="cards-container cards-grid-2">
-            <div class="neu-card content-card card-yellow">
+
+          <!-- INTERACTIVE FILTER TABS FOR TRIAD COMPETENCY -->
+          <div class="interactive-filter-tabs" id="triadFilterTabs">
+            <span class="filter-tab-label">🔍 Fokus Analisis:</span>
+            <button class="filter-pill-btn active" data-filter="all">Semua</button>
+            <button class="filter-pill-btn" data-filter="knowledge">1. Civic Knowledge</button>
+            <button class="filter-pill-btn" data-filter="skills">2. Civic Skills</button>
+            <button class="filter-pill-btn" data-filter="disposition">3. Civic Disposition</button>
+          </div>
+
+          <div class="cards-container cards-grid-2" id="triadCardsGrid">
+            <div class="neu-card content-card card-yellow" data-category="case">
               <div class="card-header-line">
                 <span class="card-num-badge">01</span>
-                <h4 class="card-subtitle">Kasus sebagai bahan analisis</h4>
+                <h4 class="card-subtitle">Kasus Nyata sebagai Bahan Analisis</h4>
               </div>
               <div class="card-text"><p>SETARA Institute pada 30 Mei 2025 menerbitkan pernyataan tentang seorang pelajar sekolah dasar berusia delapan tahun di Indragiri Hulu, Riau, yang meninggal setelah mengalami perundungan dan pemukulan oleh sejumlah kakak kelas. Laporan tersebut menyebut dugaan bahwa kekerasan terkait dengan perbedaan agama. Dugaan motif perlu tetap disebut sebagai dugaan dan tidak boleh diubah menjadi kesimpulan yang telah terbukti tanpa verifikasi lebih lanjut.</p></div>
             </div>
             
-            <div class="neu-card content-card card-cyan">
+            <div class="neu-card content-card card-cyan" data-category="knowledge">
               <div class="card-header-line">
                 <span class="card-num-badge">02</span>
-                <h4 class="card-subtitle">Analisis melalui <em>civic knowledge</em></h4>
+                <h4 class="card-subtitle">Analisis melalui <em>Civic Knowledge</em></h4>
               </div>
               <div class="card-text"><p>Pengetahuan kewarganegaraan digunakan untuk mengenali hak anak atas perlindungan dari kekerasan dan diskriminasi serta kewajiban lembaga pendidikan untuk menjaga keselamatan peserta didik. Analisis juga perlu membedakan fakta yang dilaporkan sumber dengan hal yang belum dipastikan.</p></div>
             </div>
             
-            <div class="neu-card content-card card-pink">
+            <div class="neu-card content-card card-pink" data-category="skills">
               <div class="card-header-line">
                 <span class="card-num-badge">03</span>
-                <h4 class="card-subtitle">Analisis melalui <em>civic skills</em></h4>
+                <h4 class="card-subtitle">Analisis melalui <em>Civic Skills</em></h4>
               </div>
               <div class="card-text"><p>Keterampilan kewarganegaraan digunakan untuk memeriksa sumber, menyusun kronologi terverifikasi, mengidentifikasi pihak terkait, mendengarkan keterangan dengan aman, dan merumuskan rekomendasi melalui mekanisme yang sesuai. Data korban atau anak tidak boleh disebarkan secara sembarangan.</p></div>
             </div>
             
-            <div class="neu-card content-card card-green">
+            <div class="neu-card content-card card-green" data-category="disposition">
               <div class="card-header-line">
                 <span class="card-num-badge">04</span>
-                <h4 class="card-subtitle">Analisis melalui <em>civic disposition</em></h4>
+                <h4 class="card-subtitle">Analisis melalui <em>Civic Disposition</em></h4>
               </div>
               <div class="card-text"><p>Sikap yang diperlukan meliputi empati kepada korban, penolakan terhadap kekerasan dan diskriminasi, tanggung jawab saat menyampaikan informasi, serta penghormatan terhadap proses penanganan yang adil.</p>
 <p><strong>Tugas diskusi:</strong> Jelaskan kontribusi setiap komponen kompetensi dalam memahami kasus dan usulkan langkah pencegahan yang melindungi peserta didik.</p></div>
             </div>
-            </div>
+          </div>
         </div>
         <!-- Acuan: Sumber tambahan untuk tugas: SETARA Institute, 30 Mei 2025, https://setara-institute.org/media_setara/kasus-intoleransi-dan-kekerasan-berujung-tewasnya-pelajar-sd-negara-harus-hadir-dan-mengambil-tindakan-memadai/. -->
       </section>
@@ -2269,40 +2371,44 @@
 
         <div class="slide-main-body">
           <div class="matrix-quadrant-grid">
-            <div class="quadrant-card card-cyan">
+            <div class="quadrant-card card-cyan interactive-quadrant" data-action="1">
               <div class="quadrant-badge">01 • Pengetahuan</div>
-              <h4>Literasi Hak Anak & Anti-Kekerasan</h4>
+              <h4>Literasi Hak Anak &amp; Anti-Kekerasan</h4>
               <p class="quadrant-threat">Sosialisasi UU Perlindungan Anak dan mekanisme pengaduan yang aman tanpa ancaman intimidasi.</p>
               <div class="quadrant-solution">
-                <strong>Aksi:</strong> Modul edukasi hak asasi & panduan penanganan perundungan di sekolah.
+                <strong>Aksi:</strong> Modul edukasi hak asasi &amp; panduan penanganan perundungan di sekolah.
               </div>
+              <button class="vote-action-btn" data-id="act1">👍 Dukung Solusi (<span class="vote-count">18</span>)</button>
             </div>
 
-            <div class="quadrant-card card-yellow">
+            <div class="quadrant-card card-yellow interactive-quadrant" data-action="2">
               <div class="quadrant-badge">02 • Keterampilan</div>
-              <h4>Ruang Dialog Damai & Mediasi</h4>
+              <h4>Ruang Dialog Damai &amp; Mediasi</h4>
               <p class="quadrant-threat">Membiasakan dialog antarsiswa dari berbagai latar belakang suku, agama, dan jenjang angkatan.</p>
               <div class="quadrant-solution">
                 <strong>Aksi:</strong> Pelatihan duta mediasi sebaya (<em>peer mediator</em>) di kalangan pelajar.
               </div>
+              <button class="vote-action-btn" data-id="act2">👍 Dukung Solusi (<span class="vote-count">24</span>)</button>
             </div>
 
-            <div class="quadrant-card card-pink">
+            <div class="quadrant-card card-pink interactive-quadrant" data-action="3">
               <div class="quadrant-badge">03 • Disposisi</div>
-              <h4>Kampanye Empati & Inklusivitas</h4>
+              <h4>Kampanye Empati &amp; Inklusivitas</h4>
               <p class="quadrant-threat">Menumbuhkan kepedulian sosial melalui aksi nyata kebersamaan tanpa prasangka stereotip.</p>
               <div class="quadrant-solution">
                 <strong>Aksi:</strong> Proyek kolaboratif lintas kelas dan kegiatan bakti sosial kebinekaan.
               </div>
+              <button class="vote-action-btn" data-id="act3">👍 Dukung Solusi (<span class="vote-count">21</span>)</button>
             </div>
 
-            <div class="quadrant-card card-orange">
+            <div class="quadrant-card card-orange interactive-quadrant" data-action="4">
               <div class="quadrant-badge">04 • Pengawasan</div>
-              <h4>Audit Budaya Sekolah & Monitoring</h4>
+              <h4>Audit Budaya Sekolah &amp; Monitoring</h4>
               <p class="quadrant-threat">Evaluasi berkala iklim toleransi, relasi senior-junior, dan efektivitas pengawasan tenaga pendidik.</p>
               <div class="quadrant-solution">
                 <strong>Aksi:</strong> Kotak aduan aman dan monitoring gabungan kepala sekolah serta komite.
               </div>
+              <button class="vote-action-btn" data-id="act4">👍 Dukung Solusi (<span class="vote-count">16</span>)</button>
             </div>
           </div>
         </div>
@@ -2465,6 +2571,13 @@
         </div>
       </section>
         
+      <!-- Edge Tap Hotspots for Mobile & Tablet (Left / Right one-handed navigation) -->
+      <button class="edge-tap-zone left" id="edgeTapPrev" aria-label="Slide sebelumnya" title="Ketuk untuk ke slide sebelumnya">
+        <span class="edge-hint-arrow">‹</span>
+      </button>
+      <button class="edge-tap-zone right" id="edgeTapNext" aria-label="Slide berikutnya" title="Ketuk untuk ke slide berikutnya">
+        <span class="edge-hint-arrow">›</span>
+      </button>
     </div>
   </main>
 
@@ -2478,12 +2591,13 @@
         <span class="nav-btn-text">Sebelumnya</span>
       </button>
 
-      <!-- Slide Indicator -->
-      <div class="slide-indicator" id="slideIndicator">
+      <!-- Slide Indicator as Interactive Button (Click/Tap to open slide drawer) -->
+      <button class="slide-indicator" id="slideIndicator" title="Ketuk untuk melihat daftar semua slide (48)" aria-label="Buka daftar slide">
         <span class="slide-current" id="currentSlideNum">01</span>
         <span class="slide-divider">/</span>
         <span class="slide-total" id="totalSlidesNum">48</span>
-      </div>
+        <span class="slide-indicator-icon" aria-hidden="true">📑</span>
+      </button>
 
       <button class="neu-btn primary" id="btnNext" title="Slide Berikutnya (Panah Kanan / Spasi)">
         <span class="nav-btn-text">Berikutnya</span>
@@ -2493,11 +2607,167 @@
       </button>
     </div>
 
+    <!-- Mobile Quick Action Floating Pills -->
+    <div class="mobile-quick-actions">
+      <button class="mobile-action-pill" id="mobileBtnQuiz" title="Buka Kuis Interaktif">
+        <span>🎯 Kuis</span>
+      </button>
+      <button class="mobile-action-pill" id="mobileBtnNotes" title="Buka Catatan Presenter">
+        <span>📝 Catatan</span>
+      </button>
+      <button class="mobile-action-pill" id="mobileBtnGlossary" title="Buka Kamus">
+        <span>📖 Kamus</span>
+      </button>
+    </div>
+
     <!-- Clean Keyboard Hint on Right -->
     <div class="keyboard-hint">
-      <kbd>←</kbd> <kbd>→</kbd> Navigasi • <kbd>Space</kbd> Lanjut • <kbd>F</kbd> Layar Penuh
+      <kbd>←</kbd> <kbd>→</kbd> Navigasi • <kbd>Space</kbd> Lanjut • <kbd>M</kbd> Slide • <kbd>Q</kbd> Kuis • <kbd>F</kbd> Layar Penuh
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE MODALS & DRAWERS (NEUBRUTALISM MOBILE-OPTIMIZED)
+       ========================================================================== -->
+
+  <!-- 1. SLIDE DRAWER / BOTTOM SHEET MODAL (MOBILE & DESKTOP) -->
+  <div class="neu-modal-overlay" id="slideDrawerModal" aria-hidden="true">
+    <div class="neu-drawer-sheet" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-drag-handle" id="drawerDragHandle"></div>
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="neu-badge yellow">INDEX PRESENTASI</span>
+          <h2 class="drawer-title" id="drawerTitle">📑 Daftar 48 Slide PKn</h2>
+        </div>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Tutup daftar slide">✕</button>
+      </div>
+      
+      <div class="drawer-search-wrap">
+        <span class="drawer-search-icon">🔍</span>
+        <input type="text" id="drawerSearchInput" class="drawer-search-input" placeholder="Cari materi, konsep, nomor slide, atau kata kunci..." autocomplete="off">
+        <button class="drawer-clear-search" id="clearDrawerSearch" style="display:none;" aria-label="Hapus pencarian">✕</button>
+      </div>
+
+      <div class="drawer-categories-scroll">
+        <div class="drawer-category-pills" id="drawerCategories">
+          <button class="cat-pill active" data-cat="all">Semua (48)</button>
+          <button class="cat-pill" data-cat="bab1">Bab 1: Hakikat &amp; Kedudukan</button>
+          <button class="cat-pill" data-cat="bab2">Bab 2: Terminologi &amp; Good Citizen</button>
+          <button class="cat-pill" data-cat="bab3">Bab 3: Civic Triad</button>
+          <button class="cat-pill" data-cat="bab4">Bab 4: Landasan &amp; Visi</button>
+          <button class="cat-pill" data-cat="bab5">Bab 5: Sejarah Kurikulum</button>
+          <button class="cat-pill" data-cat="bab6">Bab 6: Landasan &amp; Tantangan</button>
+          <button class="cat-pill" data-cat="bab7">Bab 7: Urgensi &amp; Demografi</button>
+          <button class="cat-pill" data-cat="bab8">Bab 8: Praktik &amp; Kasus</button>
+          <button class="cat-pill" data-cat="bab9">Bab 9: Kesimpulan</button>
+        </div>
+      </div>
+
+      <div class="drawer-slides-grid" id="drawerSlidesGrid">
+        <!-- Rendered dynamically by script.js with all 48 slides -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. INTERACTIVE QUIZ MODAL -->
+  <div class="neu-modal-overlay" id="quizModal" aria-hidden="true">
+    <div class="neu-modal-card quiz-card" role="dialog" aria-modal="true" aria-labelledby="quizModalTitle">
+      <div class="modal-card-header">
+        <div class="modal-title-group">
+          <span class="neu-badge cyan">EVALUASI INTERAKTIF</span>
+          <h2 class="modal-title" id="quizModalTitle">🎯 Kuis Pemahaman PKn</h2>
+        </div>
+        <button class="modal-close-btn" id="closeQuizBtn" aria-label="Tutup kuis">✕</button>
+      </div>
+      
+      <div class="quiz-content" id="quizContent">
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-fill" id="quizProgressFill" style="width: 20%;"></div>
+        </div>
+        <div class="quiz-status-row">
+          <span class="quiz-step-text" id="quizStepText">Pertanyaan 1 dari 5</span>
+          <span class="quiz-score-badge" id="quizScoreBadge">Skor: 0</span>
+        </div>
+
+        <div class="quiz-question-box" id="quizQuestionBox">
+          <h3 class="quiz-question-text" id="quizQuestionText">Pertanyaan kuis sedang dimuat...</h3>
+          <div class="quiz-options-list" id="quizOptionsList">
+            <!-- Options rendered by JS -->
+          </div>
+          <div class="quiz-feedback-box" id="quizFeedbackBox" style="display:none;">
+            <div class="feedback-icon" id="feedbackIcon">💡</div>
+            <div class="feedback-text" id="feedbackText">Penjelasan jawaban...</div>
+          </div>
+        </div>
+
+        <div class="quiz-actions-footer">
+          <button class="neu-btn primary" id="btnQuizNext" style="display:none;">Lanjut ke Pertanyaan Berikutnya →</button>
+        </div>
+      </div>
+
+      <div class="quiz-result-view" id="quizResultView" style="display:none;">
+        <div class="result-celebration">🏆</div>
+        <h3 class="result-title" id="resultTitle">Kuis Selesai!</h3>
+        <p class="result-score-text" id="resultScoreText">Anda menjawab 5 dari 5 benar (Skor 100/100)</p>
+        <p class="result-desc" id="resultDesc">Luar biasa! Anda telah menguasai konsep inti Pendidikan Kewarganegaraan dengan sangat baik.</p>
+        <div class="result-btn-row">
+          <button class="neu-btn primary" id="btnRestartQuiz">🔄 Ulangi Kuis</button>
+          <button class="neu-btn" id="btnCloseQuizResult">Tutup &amp; Lanjut Presentasi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. GLOSSARY / KAMUS ISTILAH MODAL -->
+  <div class="neu-modal-overlay" id="glossaryModal" aria-hidden="true">
+    <div class="neu-modal-card glossary-card" role="dialog" aria-modal="true" aria-labelledby="glossaryTitle">
+      <div class="modal-card-header">
+        <div class="modal-title-group">
+          <span class="neu-badge pink">REFERENSI AKADEMIK</span>
+          <h2 class="modal-title" id="glossaryTitle">📖 Kamus Istilah Kunci PKn</h2>
+        </div>
+        <button class="modal-close-btn" id="closeGlossaryBtn" aria-label="Tutup kamus">✕</button>
+      </div>
+
+      <div class="drawer-search-wrap">
+        <span class="drawer-search-icon">🔍</span>
+        <input type="text" id="glossarySearchInput" class="drawer-search-input" placeholder="Cari definisi istilah (misal: Civics, Triad, Landasan, Good Citizen)...">
+      </div>
+
+      <div class="glossary-list" id="glossaryList">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SPEAKER NOTES / CATATAN PRESENTER MODAL -->
+  <div class="neu-modal-overlay" id="notesModal" aria-hidden="true">
+    <div class="neu-modal-card notes-card" role="dialog" aria-modal="true" aria-labelledby="notesTitle">
+      <div class="modal-card-header">
+        <div class="modal-title-group">
+          <span class="neu-badge green">PANDUAN PEMBICARA</span>
+          <h2 class="modal-title" id="notesTitle">📝 Catatan Presenter (Slide <span id="notesSlideNum">01</span>)</h2>
+        </div>
+        <button class="modal-close-btn" id="closeNotesBtn" aria-label="Tutup catatan">✕</button>
+      </div>
+
+      <div class="notes-body" id="notesBody">
+        <h4 class="notes-slide-title" id="notesSlideTitle">Judul Slide Aktif</h4>
+        <div class="notes-content" id="notesContent">
+          Memuat catatan pembicara...
+        </div>
+      </div>
+
+      <div class="notes-footer">
+        <button class="neu-btn" id="btnNotesPrev">← Sebelumnya</button>
+        <span class="notes-counter" id="notesCounter">01 / 48</span>
+        <button class="neu-btn primary" id="btnNotesNext">Berikutnya →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle Toast Notification Container -->
+  <div class="neu-toast" id="neuToast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>

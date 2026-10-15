@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentSlideNumEl = document.getElementById('currentSlideNum');
   const totalSlidesNumEl = document.getElementById('totalSlidesNum');
   const progressBar = document.getElementById('progressBar');
-  const slideSelect = document.getElementById('slideSelect');
   const btnFullscreen = document.getElementById('btnFullscreen');
   const slideIndicator = document.getElementById('slideIndicator');
 
@@ -228,11 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
       progressBar.style.width = `${progressPercent}%`;
     }
 
-    // Update Dropdown Selector
-    if (slideSelect) {
-      slideSelect.value = String(currentSlide);
-    }
-
     // Update Prev / Next Buttons State
     if (btnPrev) {
       btnPrev.disabled = currentSlide === 1;
@@ -302,14 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Edge Tap Hotspots
   if (edgeTapPrev) edgeTapPrev.addEventListener('click', prevSlide);
   if (edgeTapNext) edgeTapNext.addEventListener('click', nextSlide);
-
-  // Dropdown change listener
-  if (slideSelect) {
-    slideSelect.addEventListener('change', (e) => {
-      const target = parseInt(e.target.value, 10);
-      goToSlide(target);
-    });
-  }
 
   // Sound FX toggle
   if (btnSoundToggle) {
@@ -1024,7 +1010,34 @@ document.addEventListener('DOMContentLoaded', () => {
           <li>Soroti bagaimana perubahan kurikulum mencerminkan dinamika politik dan tuntutan demokratisasi bangsa.</li>
         </ul>
       `;
-    } else if (currentSlide >= 39 && currentSlide <= 43) {
+    } else if (currentSlide === 39) {
+      notesHtml = `
+        <p><strong>Hasil Diskusi: Kasus Perundungan & Dugaan Intoleransi:</strong></p>
+        <ul>
+          <li>Sampaikan kasus siswa SD 8 tahun di Riau (rilis SETARA 30 Mei 2025). Tekankan status <em>dugaan</em> pada motif agama.</li>
+          <li>Hubungkan dengan PKn: perlindungan hak anak atas lingkungan belajar yang aman dan pencegahan diskriminasi.</li>
+          <li>Jelaskan 4 hasil utama diskusi dan batasan etis: jangan membuat vonis sepihak sebelum ada hasil investigasi resmi.</li>
+        </ul>
+      `;
+    } else if (currentSlide === 40) {
+      notesHtml = `
+        <p><strong>Verifikasi Informasi: Laporan, Autopsi & Data Survei:</strong></p>
+        <ul>
+          <li>Bandingkan rilis SETARA dengan berita autopsi Media Center Riau (4 Juni 2025): penyebab medis kematian adalah infeksi usus buntu pecah.</li>
+          <li>Kaitkan dengan survei siswa SMA Feb 2023 (70,2% toleran, 24,2% intoleran pasif) dalam konteks metodologi riset.</li>
+          <li>Tegaskan matriks 3 level: apa yang dilaporkan, apa temuan medis resmi, dan apa yang belum boleh disimpulkan.</li>
+        </ul>
+      `;
+    } else if (currentSlide === 41) {
+      notesHtml = `
+        <p><strong>Analisis Faktor Risiko, Pihak Terkait & Dampak:</strong></p>
+        <ul>
+          <li>Urai faktor risiko lingkungan sekolah: relasi kuasa senior-junior, normalisasi kekerasan 'candaan', dan celah pengawasan.</li>
+          <li>Jabarkan tanggung jawab 5 pihak: keluarga korban/pelaku, saksi, sekolah, aparat/pemerintah, dan masyarakat.</li>
+          <li>Soroti dampak multi-dimensi (trauma, iklim belajar, krisis kepercayaan sekolah) menuju jembatan program aksi di Slide 42.</li>
+        </ul>
+      `;
+    } else if (currentSlide >= 42 && currentSlide <= 43) {
       notesHtml = `
         <p><strong>Praktik Kasus & Program Solusi:</strong></p>
         <ul>

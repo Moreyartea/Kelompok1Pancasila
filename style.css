@@ -2991,21 +2991,31 @@ button.slide-indicator:active {
 }
 
 /* ==========================================================================
-   PRINT STYLESHEET (@media print) - PERFECT 16:9 LANDSCAPE PDF EXPORT
-   ========================================================================== */
+   PRINT STYLESHEET (
+
+
+
+
+
+
+
 @media print {
   @page {
-    size: 297mm 210mm; /* Standard A4 Landscape */
-    margin: 8mm;
+    size: 297mm 210mm;
+    margin: 0;
   }
 
-  /* Force background colors and saturated tints to print */
+  @page slide-tall {
+    size: 297mm 250mm;
+    margin: 0;
+  }
+
   *, *::before, *::after {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    box-sizing: border-box !important;
   }
 
-  /* Hide all UI Chrome & Navigation */
   .progress-container,
   .deck-header,
   .deck-footer,
@@ -3025,10 +3035,10 @@ button.slide-indicator:active {
   html, body {
     width: 100% !important;
     height: auto !important;
-    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background: #ffffff !important;
-    background-image: none !important;
-    color: #000000 !important;
+    overflow: visible !important;
     display: block !important;
   }
 
@@ -3055,78 +3065,141 @@ button.slide-indicator:active {
     transform: none !important;
   }
 
-  /* Each slide becomes its own crisp landscape page */
   .slide {
     position: relative !important;
     opacity: 1 !important;
     visibility: visible !important;
     display: flex !important;
     flex-direction: column !important;
+    justify-content: flex-start !important;
     transform: none !important;
+    width: 100% !important;
+    min-height: 210mm !important;
+    height: auto !important;
+    box-sizing: border-box !important;
     page-break-after: always !important;
     break-after: page !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    width: 100% !important;
-    height: 194mm !important;
-    max-height: 194mm !important;
+    background: #ffffff !important;
     padding: 10mm 14mm !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    background-color: #ffffff !important;
-    border: 2.5px solid #000000 !important;
-    border-radius: 12px !important;
-    margin-bottom: 20mm !important;
-    pointer-events: auto !important;
-    box-shadow: 3.5px 3.5px 0px #000000 !important;
+    border: 3px solid #000000 !important;
+    margin: 0 !important;
+    overflow: visible !important;
   }
 
-  /* Single-slide print mode support */
   body.print-single-slide .slide:not(.active) {
     display: none !important;
   }
-
   body.print-single-slide .slide.active {
     page-break-after: auto !important;
     break-after: auto !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .slide-header-box {
+    flex-shrink: 0 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 6px !important;
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  .slide-title {
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+    margin-top: 4px !important;
   }
 
   .slide-main-body {
+    display: block !important;
     overflow: visible !important;
-    max-height: none !important;
+    height: auto !important;
     flex: 1 !important;
   }
 
-  .cards-container {
-    gap: 10px !important;
+  .slide-intro-box {
+    padding: 10px 16px !important;
+    margin-bottom: 12px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    border-left-width: 6px !important;
   }
 
-  .content-card, .quadrant-card, .triad-detail-item {
-    page-break-inside: avoid !important;
+  .cards-container {
+    display: grid !important;
+    gap: 10px 14px !important;
+    width: 100% !important;
+  }
+
+  .cards-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .cards-container.cards-grid-2:has(> :nth-child(5)) {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .content-card, .quadrant-card, .roadmap-node, .triad-detail-item {
     break-inside: avoid !important;
-    box-shadow: 2.5px 2.5px 0px #000000 !important;
+    page-break-inside: avoid !important;
     border: 2px solid #000000 !important;
+    box-shadow: 2.5px 2.5px 0 #000000 !important;
     padding: 10px 14px !important;
+  }
+
+  .card-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .card-text p, .card-text li {
+    font-size: 0.85rem !important;
+    line-height: 1.38 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .card-text p:last-child {
+    margin-bottom: 0 !important;
   }
 
   .table-container {
     overflow: visible !important;
-    box-shadow: 2px 2px 0px #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: 2px 2px 0 #000000 !important;
+    margin: 6px 0 !important;
   }
 
   .neu-table {
-    min-width: 100% !important;
-    font-size: 0.88rem !important;
+    width: 100% !important;
+    font-size: 0.82rem !important;
+    border-collapse: collapse !important;
+  }
+
+  .neu-table th, .neu-table td {
+    padding: 5px 8px !important;
+  }
+
+  .roadmap-grid-8 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .matrix-quadrant-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
   }
 
   .cover-title {
-    font-size: 2.1rem !important;
+    font-size: 2.4rem !important;
   }
 
   .closing-huge-thanks {
-    font-size: 3.5rem !important;
+    font-size: 3.8rem !important;
   }
 }
-
-

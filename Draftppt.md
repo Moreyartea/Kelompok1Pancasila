@@ -775,76 +775,71 @@ PKn tetap penting untuk mempersiapkan warga menghadapi perubahan sosial dan bonu
 
 ---
 <!-- SLIDE 39 -->
-# Praktik Kewarganegaraan: Instruksi Tugas Kelompok
+# Hasil Diskusi: Kasus Perundungan dan Dugaan Intoleransi
 *Bab 8: Praktik Kewarganegaraan & Analisis*
 
-### 01. Membentuk kelompok dan memilih peristiwa
-Bentuk kelompok beranggotakan 5–7 orang. Pilih peristiwa yang berkaitan dengan intoleransi, seperti penolakan kegiatan keagamaan, penolakan pendirian rumah ibadah, atau ujaran kebencian di ruang digital. Pilih kasus yang informasinya dapat ditelusuri melalui sumber yang kredibel.
+### Ringkasan kasus yang dibahas
+Pada 30 Mei 2025, SETARA Institute menerbitkan siaran pers mengenai seorang siswa sekolah dasar berusia delapan tahun di Indragiri Hulu, Riau, yang dilaporkan mengalami perundungan dan pemukulan oleh kakak kelas. Dalam siaran pers tersebut, tindakan kekerasan diduga berkaitan dengan perbedaan agama korban. Dugaan motif tersebut harus tetap disebut sebagai dugaan sampai didukung hasil pemeriksaan yang dapat diverifikasi.
 
-### 02. Menonton video yang ditautkan melalui kode QR
-Pindai kode QR pada halaman 26 buku dan tonton video kasus intoleransi yang ditautkan. Tautan yang terbaca dari QR adalah https://q.me-qr.com/zm67pry1. Isi video perlu diperiksa langsung sebelum digunakan sebagai dasar fakta atau kutipan.
+### Mengapa kasus ini penting bagi Pendidikan Kewarganegaraan?
+Kasus ini menyoroti hak anak untuk memperoleh perlindungan dari kekerasan dan diskriminasi, serta tanggung jawab sekolah dalam menciptakan lingkungan belajar yang aman. Perbedaan agama atau latar belakang tidak dapat dijadikan alasan untuk merendahkan, mengucilkan, atau melakukan kekerasan terhadap peserta didik.
 
-### 03. Menganalisis kasus
-Identifikasi latar belakang, pihak yang terlibat, urutan peristiwa yang dapat diverifikasi, dan dampak terhadap pihak terdampak. Analisis dapat mencakup dimensi sosial, ekonomi, psikologis, budaya, dan politik. Pisahkan fakta, dugaan, serta interpretasi.
+### Hasil utama diskusi
+- Perundungan dan dugaan kekerasan harus ditindaklanjuti dengan pemeriksaan yang adil, sekalipun motif kejadian belum dipastikan.
+- Dugaan intoleransi perlu ditelaah melalui bukti dan keterangan yang dapat diverifikasi, bukan hanya berdasarkan kabar yang beredar.
+- Identitas anak harus dilindungi; korban dan keluarga membutuhkan pendampingan, sedangkan semua pihak tetap berhak atas proses yang adil.
+- Pencegahan membutuhkan kerja sama sekolah, keluarga, masyarakat, pemerintah, dan lembaga yang berwenang.
 
-### 04. Mendiskusikan penyebab dan tanggapan
-Bahas faktor yang memungkinkan intoleransi muncul, peran Pendidikan Kewarganegaraan dalam pencegahan, serta cara media sosial memperluas atau mengurangi intoleransi. Analisis juga peran keluarga, masyarakat, sekolah, pemerintah, dan lembaga yang berwenang.
+### Kesimpulan diskusi
+Kasus ini relevan untuk mengkaji dugaan perundungan dan kemungkinan intoleransi di lingkungan pendidikan. Namun, laporan awal tidak boleh diperlakukan sebagai bukti bahwa motif intoleransi telah terbukti atau bahwa perundungan merupakan penyebab medis kematian. Kesimpulan harus mengikuti temuan pemeriksaan yang tersedia.
 
-### 05. Mengumpulkan referensi dan mempresentasikan hasil
-Cari informasi dari jurnal, berita, buku, wawancara, dokumen resmi, atau sumber lain yang dapat diverifikasi. Presentasi perlu memuat ringkasan kasus, analisis, serta rancangan program solusi yang menjelaskan tujuan, sasaran, kegiatan, pelaksana, dan indikator keberhasilan.
-
-*Acuan materi: Materi.pdf, hlm. 25–26 (instruksi praktik kewarganegaraan).*
+<!-- Rujukan internal: SETARA Institute, siaran pers 30 Mei 2025, https://setara-institute.org/media_setara/kasus-intoleransi-dan-kekerasan-berujung-tewasnya-pelajar-sd-negara-harus-hadir-dan-mengambil-tindakan-memadai/; Media Center Riau, laporan 4 Juni 2025, https://mediacenter.riau.go.id/arsip/91773. -->
 
 ---
 <!-- SLIDE 40 -->
-# Praktik Analisis Kasus: Fakta Kasus, Data Survei & Kehati-hatian Analisis
+# Verifikasi Informasi: Laporan Awal, Hasil Autopsi, dan Data Survei
 *Bab 8: Praktik Kewarganegaraan & Analisis*
 
-### 01. Peristiwa yang dilaporkan
-SETARA Institute pada 30 Mei 2025 menerbitkan pernyataan mengenai seorang pelajar sekolah dasar berusia delapan tahun di Indragiri Hulu, Riau, yang meninggal setelah mengalami perundungan dan pemukulan oleh sejumlah kakak kelas. Informasi ini dapat digunakan sebagai bahan analisis karena berkaitan dengan keamanan anak, perundungan, serta penghormatan terhadap perbedaan.
+### 01. Laporan awal SETARA Institute
+Siaran pers SETARA Institute pada 30 Mei 2025 melaporkan dugaan perundungan dan pemukulan terhadap seorang siswa sekolah dasar di Indragiri Hulu. Siaran pers itu juga menyebut dugaan bahwa kekerasan berkaitan dengan perbedaan agama korban. Informasi ini merupakan laporan awal lembaga tersebut dan perlu dibedakan dari temuan pemeriksaan resmi.
 
-### 02. Status dugaan motif
-Rilis SETARA menyebut bahwa kekerasan tersebut diduga terkait dengan perbedaan agama korban. Kata *diduga* harus dipertahankan ketika menjelaskan laporan. Dugaan tidak boleh ditulis ulang sebagai fakta final apabila sumber belum menetapkan kesimpulan tersebut.
+### 02. Informasi hasil autopsi yang diberitakan pada 4 Juni 2025
+Media Center Riau melaporkan bahwa hasil autopsi menemukan memar pada bagian tubuh korban dan menyimpulkan penyebab kematian sebagai infeksi sistemik akut akibat usus buntu yang pecah. Laporan tersebut juga menyebutkan bahwa penyidik masih mendalami apakah luka-luka yang ditemukan berkaitan dengan dugaan kekerasan. Dengan demikian, penyebab medis kematian yang dilaporkan adalah infeksi akibat usus buntu pecah; hubungan antara luka, dugaan kekerasan, dan kondisi medis tidak boleh dinyatakan sebagai fakta yang telah terbukti apabila belum ditetapkan oleh pemeriksaan.
 
-### 03. Data survei yang dicantumkan sumber
-Dalam rilis yang sama, SETARA mengutip survei pada siswa SMA yang dilakukan pada Februari 2023: 70,2% responden berkategori toleran, 24,2% intoleran pasif, 5% intoleran aktif, dan 0,6% terpapar ideologi ekstremisme kekerasan. Angka tersebut perlu selalu diatribusikan kepada SETARA Institute dan konteks surveinya, bukan diperlakukan sebagai statistik seluruh pelajar Indonesia.
+### 03. Data survei yang dikutip SETARA Institute
+Dalam siaran pers yang sama, SETARA mengutip survei siswa SMA pada Februari 2023 dengan hasil: 70,2% responden berkategori toleran, 24,2% intoleran pasif, 5% intoleran aktif, dan 0,6% terpapar ideologi ekstremisme kekerasan. Angka tersebut harus dipahami sesuai konteks survei yang dikutip SETARA, bukan dianggap mewakili seluruh pelajar Indonesia atau keadaan terkini semua sekolah.
 
-### 04. Hubungan dengan Pendidikan Kewarganegaraan
-Kasus dan data tersebut dapat digunakan untuk membahas kebutuhan lingkungan pendidikan yang aman, pencegahan diskriminasi, mekanisme penanganan kekerasan, penghormatan hak anak, serta dukungan bagi korban dan keluarga. Penanganan perlu melindungi pihak terdampak dan tetap mengikuti proses yang adil.
+### 04. Kesimpulan verifikasi
+- **Dilaporkan:** terdapat dugaan perundungan dan pemukulan, serta dugaan motif perbedaan agama dalam siaran pers SETARA.
+- **Diberitakan dari hasil autopsi:** penyebab medis kematian adalah infeksi sistemik akibat usus buntu pecah; ditemukan pula memar pada tubuh korban.
+- **Belum boleh disimpulkan dari informasi tersebut:** bahwa intoleransi terbukti sebagai motif atau bahwa dugaan kekerasan menjadi penyebab medis kematian.
 
-** SETARA Institute, 30 Mei 2025, https://setara-institute.org/media_setara/kasus-intoleransi-dan-kekerasan-berujung-tewasnya-pelajar-sd-negara-harus-hadir-dan-mengambil-tindakan-memadai/.
+Pemisahan ini menjaga analisis tetap akurat, menghormati pihak terdampak, dan mencegah penyebaran informasi yang menyesatkan.
 
-### 05. Batasan Etis dan Kehati-hatian Analisis
-- **Membedakan Fakta dan Dugaan:** Pisahkan secara tegas antara kronologi kejadian yang telah diverifikasi dengan dugaan motif yang masih dalam proses penyelidikan hukum resmi.
-- **Perlindungan Hak & Kerahasiaan Anak:** Dilarang menyebarkan identitas anak korban maupun pelaku; penanganan wajib mengedepankan asas perlindungan anak dan keadilan restorative.
-- **Analisis Dampak Sistemik:** Kekerasan di sekolah berdampak pada trauma psikologis korban, beban keluarga, serta pudarnya rasa aman seluruh warga satuan pendidikan.
-- **Kontekstualisasi Data Survei:** Data survei SETARA Institute (70,2% toleran, 24,2% intoleran pasif) harus dipahami dalam konteks sampel penelitian, bukan statistik mutlak seluruh pelajar.
-
-*Sumber tambahan:;*
+<!-- Rujukan internal: SETARA Institute, 30 Mei 2025, https://setara-institute.org/media_setara/kasus-intoleransi-dan-kekerasan-berujung-tewasnya-pelajar-sd-negara-harus-hadir-dan-mengambil-tindakan-memadai/; Media Center Riau, 4 Juni 2025, https://mediacenter.riau.go.id/arsip/91773. -->
 
 ---
 <!-- SLIDE 41 -->
-# Analisis Kasus: Latar Belakang, Pihak, dan Dampak
+# Analisis Hasil Diskusi: Faktor Risiko, Pihak Terkait, dan Dampak
 *Bab 8: Praktik Kewarganegaraan & Analisis*
 
-### 01. Latar belakang yang perlu diperiksa
-Analisis latar belakang dapat mencakup relasi senior-junior, norma kelompok, respons terhadap perbedaan, budaya sekolah, riwayat perundungan, dan efektivitas pengawasan. Setiap dugaan penyebab perlu dihubungkan dengan informasi yang dapat diverifikasi; faktor yang belum terbukti perlu dicatat sebagai pertanyaan untuk ditelusuri.
+### 01. Faktor risiko yang perlu ditelaah
+Relasi senior-junior, kebiasaan menganggap kekerasan sebagai candaan, tekanan kelompok, lemahnya pengawasan, ketidakjelasan jalur pelaporan, dan prasangka terhadap perbedaan merupakan faktor yang perlu diperiksa dalam evaluasi lingkungan sekolah. Faktor-faktor tersebut merupakan area penelaahan, bukan kesimpulan bahwa semuanya terbukti terjadi dalam kasus ini. Dugaan motif agama juga perlu diperiksa berdasarkan bukti yang dapat diverifikasi.
 
-### 02. Pihak yang terlibat
-Pihak terkait dapat meliputi korban dan keluarga, siswa yang diduga melakukan kekerasan, saksi, guru, pimpinan sekolah, pemerintah daerah, kepolisian, dan lembaga perlindungan anak. Peran, informasi, dan tanggung jawab setiap pihak perlu dibedakan agar analisis tidak menyamakan posisi korban, saksi, pelaku yang diduga, dan lembaga penanganan.
+### 02. Pihak terkait dan tanggung jawab
+- **Anak dan keluarga:** keselamatan, privasi, pendampingan, dan akses terhadap informasi yang jelas harus diperhatikan.
+- **Siswa dan saksi:** keterangan perlu dikumpulkan secara aman tanpa intimidasi, pelabelan, atau penyebaran identitas anak.
+- **Sekolah dan tenaga pendidik:** memastikan pengawasan, menerima laporan, mencegah pembalasan, mendokumentasikan kejadian, dan menindaklanjuti laporan sesuai prosedur.
+- **Pemerintah, aparat, dan lembaga perlindungan anak:** menangani laporan sesuai kewenangan, melindungi pihak terdampak, dan memastikan proses berjalan adil.
+- **Keluarga dan masyarakat:** membangun sikap menghargai perbedaan serta melaporkan kekerasan melalui saluran yang tepat.
 
-### 03. Dampak sosial dan psikologis
-Dampak dapat berupa hilangnya rasa aman, trauma, stigma, ketakutan keluarga, rusaknya hubungan antarsiswa, berkurangnya kepercayaan kepada sekolah, dan risiko diskriminasi berulang. Dampak sebaiknya dijelaskan berdasarkan informasi yang tersedia, bukan asumsi yang tidak didukung sumber.
+### 03. Dampak yang perlu diperhatikan
+Perundungan dan kekerasan di sekolah dapat mengganggu rasa aman, kesehatan fisik dan psikologis, hubungan antarsiswa, kepercayaan keluarga kepada sekolah, serta iklim belajar. Rumor yang tidak terverifikasi juga dapat memperluas stigma terhadap kelompok tertentu atau membuka identitas anak. Dampak khusus pada kasus ini perlu dijelaskan berdasarkan informasi yang benar-benar tersedia, bukan dengan asumsi.
 
-### 04. Dampak ekonomi dan kelembagaan
-Kasus kekerasan dapat menimbulkan kebutuhan biaya perawatan dan pendampingan, waktu yang digunakan keluarga serta sekolah untuk pemulihan, dan kebutuhan perbaikan sistem perlindungan. Kepercayaan terhadap lembaga juga dapat menurun ketika respons lambat, tidak jelas, atau tidak melindungi pihak terdampak.
+### 04. Hasil analisis dan arah tindak lanjut
+Kasus ini menunjukkan perlunya lingkungan sekolah yang aman, prosedur pelaporan yang mudah diakses, pengawasan yang memadai, pendidikan anti-perundungan dan anti-diskriminasi, serta tindak lanjut yang melindungi anak. Semua laporan harus diperiksa tanpa prasangka; dugaan motif tidak boleh langsung dianggap sebagai fakta, dan perlindungan terhadap korban harus berjalan bersama proses yang adil bagi semua pihak.
 
-### 05. Prinsip penanganan
-Pemetaan harus membedakan fakta, dugaan, dan rekomendasi. Penanganan wajib memperhatikan perlindungan anak, kerahasiaan informasi yang tidak perlu disebarkan, proses yang adil bagi seluruh pihak, dan koordinasi dengan pihak berwenang. Tujuan analisis adalah menghasilkan pencegahan dan tindak lanjut yang aman, bukan memperluas stigma atau menyebarkan identitas pihak terkait.
-
-** tugas praktik pada Materi.pdf, hlm. 25–26, dan rilis SETARA Institute yang dicantumkan pada slide sebelumnya.
-
-*Sumber konteks:*
+<!-- Rujukan internal: rangkuman analisis berdasarkan siaran pers SETARA Institute (30 Mei 2025) dan laporan hasil autopsi yang diberitakan Media Center Riau (4 Juni 2025); lihat juga rancangan solusi pada slide 42–43. -->
 
 ---
 <!-- SLIDE 42 -->

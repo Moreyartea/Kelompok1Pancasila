@@ -2903,3 +2903,230 @@ button.slide-indicator:active {
   }
 }
 
+/* ==========================================================================
+   5. PDF DOWNLOAD MODAL STYLING
+   ========================================================================== */
+.pdf-card {
+  max-width: 740px;
+}
+
+.pdf-modal-body {
+  padding: 1.4rem 1.8rem;
+  overflow-y: auto;
+  max-height: 72vh;
+}
+
+.pdf-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.pdf-option-card {
+  border: var(--neo-border-thick);
+  border-radius: var(--neo-radius-md);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--neo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: var(--neo-white);
+}
+
+.pdf-option-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neo-shadow-md);
+}
+
+.pdf-opt-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  background-color: var(--neo-black);
+  color: var(--neo-white);
+  border-radius: var(--neo-radius-pill);
+}
+
+.pdf-opt-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #111;
+  margin-top: 0.2rem;
+}
+
+.pdf-opt-desc {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pdf-print-guide {
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1.8px dashed var(--neo-black);
+  border-radius: var(--neo-radius-sm);
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.pdf-print-guide ul {
+  padding-left: 1.3rem;
+  margin-top: 4px;
+}
+
+.pdf-print-guide li {
+  margin-bottom: 2px;
+}
+
+.btn-full-width {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   PRINT STYLESHEET (@media print) - PERFECT 16:9 LANDSCAPE PDF EXPORT
+   ========================================================================== */
+@media print {
+  @page {
+    size: 297mm 210mm; /* Standard A4 Landscape */
+    margin: 8mm;
+  }
+
+  /* Force background colors and saturated tints to print */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all UI Chrome & Navigation */
+  .progress-container,
+  .deck-header,
+  .deck-footer,
+  .edge-tap-zone,
+  .mobile-quick-actions,
+  .neu-modal-overlay,
+  .neu-toast,
+  .keyboard-hint,
+  .interactive-filter-tabs,
+  .vote-action-btn,
+  .citizen-result-bar,
+  #btnFullscreen,
+  #progressBar {
+    display: none !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    display: block !important;
+  }
+
+  .presentation-stage {
+    display: block !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    perspective: none !important;
+  }
+
+  .slide-frame {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    perspective: none !important;
+    transform: none !important;
+  }
+
+  /* Each slide becomes its own crisp landscape page */
+  .slide {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transform: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    width: 100% !important;
+    height: 194mm !important;
+    max-height: 194mm !important;
+    padding: 10mm 14mm !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    border: 2.5px solid #000000 !important;
+    border-radius: 12px !important;
+    margin-bottom: 20mm !important;
+    pointer-events: auto !important;
+    box-shadow: 3.5px 3.5px 0px #000000 !important;
+  }
+
+  /* Single-slide print mode support */
+  body.print-single-slide .slide:not(.active) {
+    display: none !important;
+  }
+
+  body.print-single-slide .slide.active {
+    page-break-after: auto !important;
+    break-after: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .slide-main-body {
+    overflow: visible !important;
+    max-height: none !important;
+    flex: 1 !important;
+  }
+
+  .cards-container {
+    gap: 10px !important;
+  }
+
+  .content-card, .quadrant-card, .triad-detail-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: 2.5px 2.5px 0px #000000 !important;
+    border: 2px solid #000000 !important;
+    padding: 10px 14px !important;
+  }
+
+  .table-container {
+    overflow: visible !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+  }
+
+  .neu-table {
+    min-width: 100% !important;
+    font-size: 0.88rem !important;
+  }
+
+  .cover-title {
+    font-size: 2.1rem !important;
+  }
+
+  .closing-huge-thanks {
+    font-size: 3.5rem !important;
+  }
+}
+
+

@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnQuiz = document.getElementById('btnQuiz');
   const btnGlossary = document.getElementById('btnGlossary');
   const btnNotes = document.getElementById('btnNotes');
+  const btnDownloadPdf = document.getElementById('btnDownloadPdf');
   const btnSoundToggle = document.getElementById('btnSoundToggle');
   const soundIconOn = document.getElementById('soundIconOn');
   const soundIconOff = document.getElementById('soundIconOff');
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileBtnQuiz = document.getElementById('mobileBtnQuiz');
   const mobileBtnNotes = document.getElementById('mobileBtnNotes');
   const mobileBtnGlossary = document.getElementById('mobileBtnGlossary');
+  const mobileBtnPdf = document.getElementById('mobileBtnPdf');
 
   // Edge tap buttons
   const edgeTapPrev = document.getElementById('edgeTapPrev');
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizModal = document.getElementById('quizModal');
   const glossaryModal = document.getElementById('glossaryModal');
   const notesModal = document.getElementById('notesModal');
+  const pdfModal = document.getElementById('pdfModal');
   const neuToast = document.getElementById('neuToast');
 
   // Modal close buttons
@@ -50,6 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeQuizBtn = document.getElementById('closeQuizBtn');
   const closeGlossaryBtn = document.getElementById('closeGlossaryBtn');
   const closeNotesBtn = document.getElementById('closeNotesBtn');
+  const closePdfBtn = document.getElementById('closePdfBtn');
+
+  // PDF Export Controls
+  const btnTriggerPrintAll = document.getElementById('btnTriggerPrintAll');
+  const btnTriggerPrintCurrent = document.getElementById('btnTriggerPrintCurrent');
+  const pdfCurrentSlideNum = document.getElementById('pdfCurrentSlideNum');
 
   // ==========================================================================
   // AUDIO SYNTHESIZER (Pure Web Audio API - Zero Asset Dependency)
@@ -252,6 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Speaker Notes if Notes Modal is currently open
     if (notesModal && notesModal.classList.contains('open')) {
       renderSpeakerNotes();
+    }
+
+    // Update PDF modal current slide indicator
+    if (pdfCurrentSlideNum) {
+      pdfCurrentSlideNum.textContent = padZero(currentSlide);
     }
   };
 
@@ -557,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Close modals on overlay backdrop click
-  [slideDrawerModal, quizModal, glossaryModal, notesModal].forEach((modal) => {
+  [slideDrawerModal, quizModal, glossaryModal, notesModal, pdfModal].forEach((modal) => {
     if (!modal) return;
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
@@ -571,6 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
   closeQuizBtn?.addEventListener('click', () => closeModal(quizModal));
   closeGlossaryBtn?.addEventListener('click', () => closeModal(glossaryModal));
   closeNotesBtn?.addEventListener('click', () => closeModal(notesModal));
+  closePdfBtn?.addEventListener('click', () => closeModal(pdfModal));
 
   // Open modal triggers
   btnSlideDrawer?.addEventListener('click', () => openModal(slideDrawerModal));
@@ -601,6 +616,15 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileBtnNotes?.addEventListener('click', () => {
     openModal(notesModal);
     renderSpeakerNotes();
+  });
+
+  btnDownloadPdf?.addEventListener('click', () => {
+    if (pdfCurrentSlideNum) pdfCurrentSlideNum.textContent = padZero(currentSlide);
+    openModal(pdfModal);
+  });
+  mobileBtnPdf?.addEventListener('click', () => {
+    if (pdfCurrentSlideNum) pdfCurrentSlideNum.textContent = padZero(currentSlide);
+    openModal(pdfModal);
   });
 
   // ==========================================================================
@@ -1209,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal close on Escape
     if (e.key === 'Escape') {
-      [slideDrawerModal, quizModal, glossaryModal, notesModal].forEach((m) => closeModal(m));
+      [slideDrawerModal, quizModal, glossaryModal, notesModal, pdfModal].forEach((m) => closeModal(m));
       return;
     }
 
@@ -1291,8 +1315,50 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         toggleFullscreen();
         break;
+
+      case 'p':
+      case 'P':
+        e.preventDefault();
+        if (pdfModal?.classList.contains('open')) {
+          closeModal(pdfModal);
+        } else {
+          if (pdfCurrentSlideNum) pdfCurrentSlideNum.textContent = padZero(currentSlide);
+          openModal(pdfModal);
+        }
+        break;
     }
   });
+
+  // ==========================================================================
+  // PDF EXPORT / PRINT ENGINE
+  // ==========================================================================
+  function printAllSlides() {
+    playSound('pop');
+    closeModal(pdfModal);
+    document.body.classList.remove('print-single-slide');
+    showToast('🖨️ Menyiapkan dokumen PDF (48 Slide)...');
+    setTimeout(() => {
+      window.print();
+    }, 300);
+  }
+
+  function printCurrentSlide() {
+    playSound('pop');
+    closeModal(pdfModal);
+    document.body.classList.add('print-single-slide');
+    showToast(`🖨️ Menyiapkan cetak Slide ${padZero(currentSlide)}...`);
+    setTimeout(() => {
+      window.print();
+    }, 300);
+  }
+
+  // Restore state after print dialog is closed
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('print-single-slide');
+  });
+
+  btnTriggerPrintAll?.addEventListener('click', printAllSlides);
+  btnTriggerPrintCurrent?.addEventListener('click', printCurrentSlide);
 
   // Initial render on slide 1
   goToSlide(1, false);
